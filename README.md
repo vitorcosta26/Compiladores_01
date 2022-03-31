@@ -1,5 +1,5 @@
 # Compiladores
-* Disciplina lecionada pela professora Laysa..
+* Disciplina lecionada pela professora Layse Santos Souza
 * Dupla: 
    *  Johnny William  
    *  Paulo Vitor
