@@ -1,6 +1,6 @@
 package visitor;
 
-import compiladores.sintaticoBaseVisitor;
+import compilador.sintaticoBaseVisitor;
 
 public class Visitor extends sintaticoBaseVisitor<Integer> {
 

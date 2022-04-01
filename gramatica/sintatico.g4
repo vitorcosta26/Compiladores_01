@@ -3,7 +3,7 @@ grammar sintatico;
 import lexico;
 
 prog
-	: PROGRAM IDENTIFIER PVIG decls cmdComp PONTO
+	: PROGRAM ID PVIG decls cmdComp PONTO
 	;
 
 decls
@@ -21,8 +21,8 @@ declTip
 	;
 
 listId
-	: IDENTIFIER
-	| IDENTIFIER VIG listId
+	: ID
+	| ID VIG listId
 	;
 
 tip
@@ -70,16 +70,15 @@ elemW
 	| CADEIA
 	;
 
-cmdAtrib: IDENTIFIER ATRIB expr;
+cmdAtrib: ID ATRIB expr;
 
 expr
-	: OPAD expr
-	| OPNEG? ABPAR expr FPAR
+	: OPNEG? ABPAR expr FPAR
 	| expr OPMULT expr
 	| expr OPAD expr
 	| expr OPREL expr
-	| OPNEG? IDENTIFIER
-	| OPNEG? CTE
+	| OPNEG? ID
+	| OPNEG? OPAD? CTE
 	| OPNEG? TRUE
 	| OPNEG? FALSE
 	| OPNEG? OPNEG

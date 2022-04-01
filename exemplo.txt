@@ -1,7 +1,0 @@
-PROGRAM p;
-VAR x: INTEGER;
-BEGIN
-	x:=1;
-	WHILE (x<3) DO
-		c:=x+1
-END.

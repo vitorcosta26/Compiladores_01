@@ -9,8 +9,6 @@ public class ErrorListener extends BaseErrorListener {
 	
 	public static boolean hasError = false;
 	
-	
-	
 	@Override
 	public void syntaxError(Recognizer<?, ?> recognizer,
 			Object offendingSymbol,

@@ -10,8 +10,8 @@ import org.antlr.v4.runtime.ConsoleErrorListener;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import compiladores.sintaticoLexer;
-import compiladores.sintaticoParser;
+import compilador.sintaticoLexer;
+import compilador.sintaticoParser;
 import listener.ErrorListener;
 import visitor.Visitor;
 
@@ -23,7 +23,8 @@ public class Main {
 		try (Scanner entrada = new Scanner(System.in)) {
 			//System.out.println("DIGITE O NOME DO ARQUIVO QUE CONTEM O CODIGO DO PROGRAMA!");
 			//fileName = entrada.nextLine();
-			fileName = "exemplo.txt";
+			fileName = "prog.txt";
+			//fileName = "input.txt";
 			//fileName = "erroLexico.txt";
 			//fileName = "erroSintatico.txt";
 			System.out.println("\n---------------------------------------------------------\n");
@@ -68,11 +69,10 @@ public class Main {
 		lexer.removeErrorListener(ConsoleErrorListener.INSTANCE);
 		
 		while(((token = lexer.nextToken()).getType() != Token.EOF)) {
-			System.out.println("["+token.getLine()
-				+":"+token.getCharPositionInLine()
-				+" = '"+token.getText()
-				+"', <"+sintaticoLexer.VOCABULARY.getDisplayName(token.getType())
-				+">]");
+			System.out.println("['"+token.getText()
+								+"' - <"+sintaticoLexer.VOCABULARY.getDisplayName(token.getType())
+								+">, linha: "+token.getLine()
+								+":"+(token.getCharPositionInLine() + 1)+"]");
 		}
 		
 		lexer.addErrorListener(ConsoleErrorListener.INSTANCE);
